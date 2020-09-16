@@ -32,6 +32,7 @@ body {
 .description {
   padding: 0 10px;
   margin-bottom: 30px;
+  line-height: 1.5;
 }
 .start {
   background-color: #0197f6;
