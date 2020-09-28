@@ -43,10 +43,14 @@ body {
     width: 60%;
   }
 }
+.container__rules,
+.container__homepage,
+.image__homepage {
+  border-radius: 7px 7px 0 0;
+}
 .container__homepage,
 .image__homepage {
   width: 360px;
-  border-radius: 7px 7px 0 0;
 }
 .image {
   height: auto;
