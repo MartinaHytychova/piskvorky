@@ -70,6 +70,7 @@ body {
 }
 .headline {
   font-family: 'Lobster', cursive;
+  font-size: 3rem;
 }
 .description {
   padding: 0 10px;
