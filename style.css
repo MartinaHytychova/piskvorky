@@ -208,6 +208,7 @@ body {
   align-items: center;
   opacity: 0.4;
   cursor: pointer;
+  background-color: #E2E6EB;
 }
 
 .grid-item:hover,
