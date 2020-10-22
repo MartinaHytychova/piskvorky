@@ -21,13 +21,13 @@ btnElm.innerHTML = InnerElm() + BtnGrid();
 //kdo je na tahu
 let player = 'circle';
 
-const SvgElm = () => {
+const SvgElm = (player) => {
   return `<img class="image__svg" src="./images/${player}.svg"/>`;
 };
 
 const round = () => {
   const playerElm = document.querySelector('#player');
-  playerElm.innerHTML = SvgElm();
+  playerElm.innerHTML = SvgElm(player);
 };
 
 // hra

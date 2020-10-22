@@ -239,6 +239,7 @@ body {
 .board__field--cross::before,
 .board__field--cross::after {
   position: absolute;
+  display: block;
   content: '';
   width: 80%;
   height: 4px;
@@ -246,20 +247,23 @@ body {
 }
 
 .board__field--cross::before {
-  transform: rotate(45deg);
+  animation: board__field--cross-before 0.25s cubic-bezier(0, 0, 0.69, 1.47)
+    forwards;
 }
 
 .board__field--cross::after {
-  transform: rotate(-45deg);
+  animation: board__field--cross-after 0.25s cubic-bezier(0, 0, 0.69, 1.47)
+    forwards;
 }
 
 .board__field--circle::after {
   content: '';
-  display: inline-block;
+  display: block;
   width: 60%;
   height: 60%;
   border-radius: 50%;
   border: 3px solid black;
+  animation: board__field--circle 0.25s cubic-bezier(0, 0, 0.69, 1.47) forwards;
 }
 
 .inner {
@@ -301,5 +305,32 @@ body {
 @media screen and (min-width: 960px) {
   .container__rules {
     max-width: 50%;
+  }
+}
+
+@keyframes board__field--circle {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes board__field--cross-after {
+  0% {
+    transform: rotate(45deg) scale(0);
+  }
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+@keyframes board__field--cross-before {
+  0% {
+    transform: rotate(-45deg) scale(0);
+  }
+  100% {
+    transform: rotate(-45deg) scale(1);
   }
 }
