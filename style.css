@@ -259,8 +259,8 @@ body {
 .board__field--circle::after {
   content: '';
   display: block;
-  width: calc(100% - 7px - 7px);
-  height: calc(100% - 7px - 7px);
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   border: 3px solid black;
   animation: board__field--circle 0.25s cubic-bezier(0, 0, 0.69, 1.47) forwards;
@@ -290,6 +290,11 @@ body {
   .legend {
     font-size: 14px;
   }
+
+  .board__field--circle::after {
+    width: 35px;
+    height: 35px;
+  }
 }
 
 @media screen and (min-width: 540px) and (max-width: 960px) {
@@ -310,6 +315,11 @@ body {
 @media screen and (min-width: 960px) {
   .container__rules {
     max-width: 50%;
+  }
+
+  .board__field--circle::after {
+    width: 35px;
+    height: 35px;
   }
 }
 
