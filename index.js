@@ -11,23 +11,26 @@ const BtnGrid = () => {
   return elem;
 };
 
+// dodatečný element pro opacity
 const InnerElm = () => {
   return '<div class="inner"></div>';
 };
 
+// přiřazení elementů do gridu
 const btnElm = document.querySelector('#grid');
 btnElm.innerHTML = InnerElm() + BtnGrid();
 
-//kdo je na tahu
+// výchozí tah hraje kolečko
 let player = 'circle';
 
-const SvgElm = (player) => {
-  return `<img class="image__svg" src="./images/${player}.svg"/>`;
-};
-
-const round = () => {
+const playerTurn = () => {
   const playerElm = document.querySelector('#player');
   playerElm.innerHTML = SvgElm(player);
+};
+
+//tvroba svg elementu pro zobrazení střídání hráčů
+const SvgElm = (player) => {
+  return `<img class="image__svg" src="./images/${player}.svg"/>`;
 };
 
 // hra
@@ -40,10 +43,10 @@ const play = () => {
         button.classList.add(`board__field--${player}`);
         if (player === 'cross') {
           player = 'circle';
-          round();
+          playerTurn();
         } else {
           player = 'cross';
-          round();
+          playerTurn();
         }
         button.setAttribute('disabled', true);
       }
