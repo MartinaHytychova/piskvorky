@@ -23,14 +23,21 @@ btnElm.innerHTML = InnerElm() + BtnGrid();
 // výchozí tah hraje kolečko
 let player = 'circle';
 
+const FirstMove = () => {
+  return `<img class="image__svg" src="./images/circle.svg"/>`;
+};
+
+const playerElm = document.querySelector('#player');
+playerElm.innerHTML = FirstMove();
+
+//tvorba svg elementu pro zobrazení střídání hráčů
+const SvgElm = (player) => {
+  return `<img class="image__svg" src="./images/${player}.svg"/>`;
+};
+
 const playerTurn = () => {
   const playerElm = document.querySelector('#player');
   playerElm.innerHTML = SvgElm(player);
-};
-
-//tvroba svg elementu pro zobrazení střídání hráčů
-const SvgElm = (player) => {
-  return `<img class="image__svg" src="./images/${player}.svg"/>`;
 };
 
 // hra
