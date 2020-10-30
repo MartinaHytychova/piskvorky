@@ -51,14 +51,16 @@ const play = () => {
         if (player === 'cross') {
           if (isWinningMove(e.target)) {
             isWinningMove(e.target);
-            alert(`Vyhrál ${player}`);
+            if (confirm('Vyhrál hráč s křížkem.')) {
+              location.reload();
+            }
           }
           player = 'circle';
           playerTurn();
         } else {
           if (isWinningMove(e.target)) {
             isWinningMove(e.target);
-            if (confirm(`Vyhrál ${player}`)) {
+            if (confirm('Vyhrál hráč s kolečkem.')) {
               location.reload();
             }
           }
@@ -67,7 +69,7 @@ const play = () => {
         }
         button.setAttribute('disabled', true);
       }
-      diagonalCheck(e.target);
+      //diagonalCheck(e.target);
     });
   }
 };

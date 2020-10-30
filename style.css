@@ -126,11 +126,9 @@ body {
 .icon {
   width: 1em;
   height: 1em;
-  filter: invert(100%);
 }
 
 .icon__big {
-  filter: invert(100%);
   margin-left: 5px;
   width: 20px;
   height: 20px;
